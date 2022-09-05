@@ -35,6 +35,6 @@ export default class Inventory {
   //Delete Musician
   deleteMusician(id) {
     const index = this.musicians.map((musician) => musician.id).indexOf(id);
-    this.guitars.splice(index, 1);
+    this.musicians.splice(index, 1);
   }
 }

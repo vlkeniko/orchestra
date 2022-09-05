@@ -17,12 +17,49 @@ export default class Controller {
         `;
   }
 
+  //ID search
+
   idSearch(id) {
     const musician = this.model.musicianList.getMusician(id);
     let template = "";
 
     if (musician !== null) {
       template = this.build;
+    } else {
+      template = `<div class="cardbox"><p class="nothing">Nothing to show here</p></div>`;
     }
+    this.view.message(template);
+  }
+
+  //Show all Musicians
+  showAllMusicians() {
+    let template ="";
+    for (const musician of this.model.musicianList.allMusicians()) {
+        template += this.buildTemplate(musician);
+    }
+    this.view.message(template);
+  }
+
+  //New Musician
+
+  newMusician(musician) {
+    const doesMusicianAlreadyExist = this.model.musicianList.getMusician(
+        musician.id
+    );
+    if (doesMusicianAlreadyExist === null){
+        this.model.musicianList.addMusician(
+            musician.id,
+            musician.firstname,
+            musician.lastname,
+            musician.instrument,
+            musician.seniority,
+            musician.residence
+        );
+    }
+  }
+
+  //Delete a musician
+  deleteMusician(id) {
+    this.model.musicianList.deleteMusician(id);
   }
 }
