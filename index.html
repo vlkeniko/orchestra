@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <title>Rick's Orchestra</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-    
+
     <h1>Rick's Orchestra</h1>
     <div class="header">
         <div>
@@ -21,7 +23,77 @@
 
         </form>
     </div>
+    <!--Add a musician dialog start-->
+    <dialog id="musicianDialog">
+        <form method="dialog" id="musicianDialogForm">
+            <fieldset>
+                <legend>Add a new musician</legend>
+                <!--This id has small letters only, its a different snfield-->
+                <label for="idfield">ID:</label><input type="text" class="inputField dialogField" id="idfield"
+                    placeholder="ID" required>
 
+                <label for="firstnamefield">Firstname:</label><input type="text" class="inputField dialogField"
+                    id="firstnamefield" placeholder="Firstname" required>
+
+                <label for="lastnamefield">Lastname:</label><input type="text" class="inputField dialogField"
+                    id="lastnamefield" placeholder="Lastname" required>
+
+                <label for="instrumentfield">Instrument:</label><input type="text" class="inputField dialogField"
+                    id="instrumentfield" placeholder="Instrument" required>
+
+                <label for="seniorityfield">Seniority:</label><input type="text" class="inputField dialogField"
+                    id="seniorityfield" placeholder="Seniority" required>
+
+                <label for="residencefield">Residence:</label><input type="text" class="inputField dialogField"
+                    id="residencefield" placeholder="Residence" required>
+
+                <div class="dialogBtnsPanel">
+                    <!--Cancel button-->
+                    <button type="button" id="cancelButton" class="button">Cancel</button>
+                    <!--Save button-->
+                    <button type="submit" id="saveButton" class="button">Save</button>
+
+                </div>
+
+            </fieldset>
+        </form>
+
+    </dialog>
+    <!--Add a musician dialgog end-->
+    <!--Delete dialog starts-->
+    <dialog id="confirmDialog">
+        <form method="dialog" id="confirmDialogForm">
+            <fieldset>
+                <legend>Delete musician??</legend>
+                Do you really want to delete this musician? :(
+                <br><br>
+                <div class="dialogBtnsPanel">
+                    <button type="submit" class="button">Yes</button>
+                    <button type="button" class="button" id="cancelConfirmBtn">No</button>
+
+                </div>
+            </fieldset>
+        </form>
+    </dialog>
+    <!--Delete Musician dialog ends-->
+     <!--Hidden field-->
+     <form>
+        <input type="hidden" id="hiddenSnField">
+    </form>
+    <table class="tablelist">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Instrument</th>
+                <th>Seniority</th>
+                <th>Residence</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="searchResult"></tbody>
+    </table>
 
     <!--Script-->
     <script type="module">
@@ -37,4 +109,5 @@
         }
     </script>
 </body>
+
 </html>
