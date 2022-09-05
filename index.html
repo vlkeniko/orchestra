@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick's Orchestra</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    
+    <h1>Rick's Orchestra</h1>
+    <div class="header">
+        <div>
+            <button type="button" class="button" id="addMusicianButton">Add a musician</button>
+            <button type="button" class="button" id="showAllMusiciansButton">Show All</button>
+        </div>
+        <form id="idSearchForm">
+            <input type="search" id="idField" class="inputField" placeholder="Search Musician id">
+            <button type="submit" class="button">Search</button>
+
+        </form>
+    </div>
+
+
+    <!--Script-->
+    <script type="module">
+        import Model from "./models/model.js"
+        import Controller from "./controllers/controller.js"
+        import View from "./views/view.js"
+
+        window.onload = function () {
+            const model = new Model();
+            const controller = new Controller();
+            const view = new View(controller);
+            controller.initialize(model, view);
+        }
+    </script>
+</body>
+</html>
