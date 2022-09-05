@@ -1,0 +1,8 @@
+.cardbox{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    flex-direction: center;
+    width: 80%;
+    max-height: 600px;
+}

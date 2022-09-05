@@ -10,7 +10,7 @@ export default class Musician {
 
   //Methods
 
-  getID() {
+  getId() {
     return this.id;
   }
 
