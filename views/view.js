@@ -98,7 +98,7 @@ export default class View {
       //deleting the musician stored in the hidden snfield
       self.controller.deleteMusician(hiddenIdField.value);
       //then showing all musicians
-      self.controller.showAllMusicians;
+      self.controller.showAllMusicians();
     };
   }
 
