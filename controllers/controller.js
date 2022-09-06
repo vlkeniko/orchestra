@@ -12,6 +12,7 @@ export default class Controller {
         <p class="instrument">${musician.getInstrument()}</p>
         <p class="seniority">${musician.getSeniority()}</p>
         <p class="residence">${musician.getResidence()}</p>
+        <button type="button" id="${musician.getId()}">Delete</button>
         </div>
       
         `;
@@ -24,7 +25,7 @@ export default class Controller {
     let template = "";
 
     if (musician !== null) {
-      template = this.build;
+      template = this.buildTemplate(musician);
     } else {
       template = `<div class="cardbox"><p class="nothing">Nothing to show here</p></div>`;
     }
@@ -69,15 +70,15 @@ export default class Controller {
         musician.seniority,
         musician.residence
       );
-      this.view.snackbar("The new Guitar was saved");
+      this.view.snackbar("Musician added to Rick's orchestra");
     } else {
-        this.view.snackbar("The Guitar already exists");
+        this.view.snackbar("The musician already exists");
       }
   }
 
   //Delete a musician
   deleteMusician(id) {
     this.model.musicianList.deleteMusician(id);
-    this.view.snackbar("The guitar was deleted!");
+    this.view.snackbar("The musician was deleted!");
   }
 }

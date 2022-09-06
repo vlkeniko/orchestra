@@ -4,7 +4,7 @@ export default class Model {
   constructor() {
     this.musicianList = new Inventory();
     this.musicianList.addMusician(
-      1212121,
+      "12121212",
       "John",
       "Smith",
       "Violin",
@@ -12,7 +12,7 @@ export default class Model {
       "Aarhus"
     );
     this.musicianList.addMusician(
-      13131313,
+      "13131313",
       "Ana",
       "Bustos",
       "Viola",
@@ -20,7 +20,7 @@ export default class Model {
       "Aarhus"
     );
     this.musicianList.addMusician(
-      "14141414,
+      "14141414",
       "Giulia",
       "Ivan",
       "Percussion",
