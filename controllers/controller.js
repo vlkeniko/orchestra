@@ -5,7 +5,7 @@ export default class Controller {
   }
 
   buildTemplate(musician) {
-    return `<div class="cardbox">
+    return `
         <div class="card">
         <p class="id">${musician.getId()}</p>
         <p class="name">${musician.getFirstname()} ${musician.getLastname()}</p>
@@ -13,7 +13,7 @@ export default class Controller {
         <p class="seniority">${musician.getSeniority()}</p>
         <p class="residence">${musician.getResidence()}</p>
         </div>
-        </div>
+      
         `;
   }
 

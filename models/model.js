@@ -4,7 +4,7 @@ export default class Model {
   constructor() {
     this.musicianList = new Inventory();
     this.musicianList.addMusician(
-      "12121212",
+      1212121,
       "John",
       "Smith",
       "Violin",
@@ -12,7 +12,7 @@ export default class Model {
       "Aarhus"
     );
     this.musicianList.addMusician(
-      "13131313",
+      13131313,
       "Ana",
       "Bustos",
       "Viola",
@@ -20,7 +20,7 @@ export default class Model {
       "Aarhus"
     );
     this.musicianList.addMusician(
-      "14141414",
+      "14141414,
       "Giulia",
       "Ivan",
       "Percussion",
@@ -31,8 +31,42 @@ export default class Model {
       "15151515",
       "Zuzanna",
       "Spaingebob",
-      "cello",
+      "Cello",
       "Two years",
+      "Aarhus"
+    );
+    this.musicianList.addMusician(
+      "161616",
+      "Tamara",
+      "Spaingebob",
+      "Bass",
+      "Four years",
+      "Aarhus"
+    );
+    this.musicianList.addMusician(
+      "171717",
+      "Klarissa",
+      "Spaingebob",
+      "Flute",
+      "Ten years",
+      "Aarhus"
+    );
+
+    this.musicianList.addMusician(
+      "181818",
+      "Dori",
+      "Explori",
+      "Violin",
+      "Ten years",
+      "Litvori"
+    );
+
+    this.musicianList.addMusician(
+      "191919",
+      "Eniko",
+      "Valko",
+      "Triangle",
+      "Ten years",
       "Aarhus"
     );
   }
