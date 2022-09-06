@@ -23,6 +23,37 @@
 
         </form>
     </div>
+    <!--Panel start-->
+    <aside class="searchPanel" id="searchPanel">
+        <span class="panelText" id="panelText">A D V A N C E D&nbsp;&nbsp;S E A R C H</span>
+        <form id="searchForm" class="searchForm">
+            <div class="closeCross" id="closeCross">X</div>
+
+            <label for="id" class="searchFormLabel">ID</label>
+            <input type="text" id="id" class="searchFormField">
+
+            <label for="firstname" class="searchFormLabel">Firstname</label>
+            <input type="text" id="firstname" class="searchFormField">
+
+            <label for="lastname" class="searchFormLabel">Lastname</label>
+            <input type="text" id="lastname" class="searchFormField">
+
+            <label for="instrument" class="searchFormLabel">Instrument</label>
+            <input type="text" id="instrument" class="searchFormField">
+
+            <label for="seniority" class="searchFormLabel">Seniority</label>
+            <input type="text" id="seniority" class="searchFormField">
+
+            <label for="residence" class="searchFormLabel">Residence</label>
+            <input type="text" id="residence" class="searchFormField">
+            <br><br>
+            <div class="searchFormPanel">
+                <button type="reset" class="searchFormButton">Reset</button><br>
+                <button type="submit" class="searchFormButton">Apply</button>
+            </div>
+        </form>
+    </aside>
+    <!--Panel end-->
     <!--Add a musician dialog start-->
     <dialog id="musicianDialog">
         <form method="dialog" id="musicianDialogForm">
@@ -94,7 +125,8 @@
         </thead>
         <tbody id="searchResult"></tbody>
     </table>
-
+    <!--The snackbar-->
+    <div id="snackbar"></div>
     <!--Script-->
     <script type="module">
         import Model from "./models/model.js"

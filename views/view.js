@@ -3,18 +3,19 @@ export default class View {
   constructor(controller) {
     const self = this;
     const idSearchForm = document.getElementById("idSearchForm");
+    const searchForm = document.getElementById("searchForm");
     const idField = document.getElementById("idField");
-    /*     const id = document.getElementById("id");
+    const id = document.getElementById("id");
     const firstname = document.getElementById("firstname");
     const lastname = document.getElementById("lastname");
     const instrument = document.getElementById("instrument");
     const seniority = document.getElementById("seniority");
-    const residence = document.getElementById("residence"); */
+    const residence = document.getElementById("residence");
     const showAllMusiciansButton = document.getElementById(
       "showAllMusiciansButton"
     );
     const musicianDialogForm = document.getElementById("musicianDialogForm");
-    const addMusicianButton = document.getElementById("AddMusicianButton");
+    const addMusicianButton = document.getElementById("addMusicianButton");
     const musicianDialog = document.getElementById("musicianDialog");
     const cancelButton = document.getElementById("cancelButton");
     const searchResult = document.getElementById("searchResult");
@@ -36,7 +37,30 @@ export default class View {
       self.controller.idSearch(idField.value);
     };
 
+    //Advanced Search
+    searchForm.onsubmit = function (e) {
+      e.preventDefault();
+      const optimalMusician = new Musician(
+        id.value,
+        firstname.value,
+        lastname.value,
+        instrument.value,
+        seniority.value,
+        residence.value
+      );
+      console.log(optimalMusician);
 
+      self.controller.search(optimalMusician);
+      searchPanel.classList.remove("searchPanelAnim");
+    };
+
+    panelText.onclick = function () {
+      searchPanel.classList.add("searchPanelAnim");
+    };
+
+    closeCross.onclick = function () {
+      searchPanel.classList.remove("searchPanelAnim");
+    };
 
     //Dialog EventHandler
     addMusicianButton.onclick = function () {
@@ -51,11 +75,11 @@ export default class View {
     musicianDialogForm.onsubmit = function () {
       self.controller.newMusician({
         id: document.getElementById("idfield").value,
-        firstname: document.getElementById("firstname").value,
-        lastname: document.getElementById("lastname").value,
-        instrument: document.getElementById("instrument").value,
-        seniority: document.getElementById("seniority").value,
-        residence: document.getElementById("residence").value,
+        firstname: document.getElementById("firstnamefield").value,
+        lastname: document.getElementById("lastnamefield").value,
+        instrument: document.getElementById("instrumentfield").value,
+        seniority: document.getElementById("seniorityfield").value,
+        residence: document.getElementById("residencefield").value,
       });
     };
 
@@ -82,5 +106,15 @@ export default class View {
     const element = document.getElementById("searchResult");
     element.innerHTML = ""; //Resets the result output element
     element.insertAdjacentHTML("beforeend", template);
+  }
+
+  snackbar(snackmessage) {
+    // Bindings to the snackbar
+    const snackbar = document.getElementById("snackbar");
+    snackbar.innerHTML = snackmessage;
+    snackbar.className = "show";
+    setTimeout(function () {
+      snackbar.className = snackbar.className.replace("show", "");
+    }, 3000);
   }
 }

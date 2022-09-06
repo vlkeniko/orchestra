@@ -26,6 +26,28 @@ export default class Inventory {
     }
     return null;
   }
+  // The big searchy
+  search(idealMusician) {
+    //Desctructuring
+    const { id, firstname, lastname, instrument, seniority, residence } =
+      idealMusician;
+
+    for (const musician of this.musicians) {
+      if (
+        musician.id <= id &&
+        musician.firstname === firstname &&
+        musician.lastname === lastname &&
+        musician.instrument === instrument &&
+        musician.seniority === seniority &&
+        musician.residence === residence
+      ) {
+        console.log("hi");
+        return musician;
+      }
+    }
+
+    return null;
+  }
 
   //Returns a list of musicians
   allMusicians() {
